@@ -1,0 +1,82 @@
+﻿@model GenieTaskIbrahim.Models.User
+@{
+    ViewBag.Title = "Signup";
+}
+<style>
+    .TextGB {
+        display: block;
+    }
+</style>
+<div><h4 class="titleGetStarted">SIGNUP NOW AND GET STARTED</h4><h4>Plesse enter your account information</h4></div>
+<div class="signinNow">
+   
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group row">
+            <div class="col-12">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                  
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control inputtext", placeholder = "Full Name" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12">
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control inputemail", placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12">
+                <div class="form-group">
+
+                  <div class="col-md-12">
+                        @Html.PasswordFor(model => model.Password,  new { @class = "form-control inputpassword", placeholder = "Password" })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-12">
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        @Html.PasswordFor(model => model.ConfPassword,  new { @class = "form-control inputpassword", placeholder = "Confirm Password" })
+                        @Html.ValidationMessageFor(model => model.ConfPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-7">
+                <input type="submit" value="Sign Up" class="btn btn-primary btin" /><br>
+                <a>@Html.ActionLink("Login", "Login", "Users", new { @class = "btn btn-primary btnActivate" })</a>
+            </div>
+        </div>
+    </div>
+                }
+
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

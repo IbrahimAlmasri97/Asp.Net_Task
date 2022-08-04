@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Task Genie</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container">
+        <div class="h2 pageTitle">
+          <b>  @ViewBag.PageTitle </b>
+        </div>
+        <div class="row">
+
+            <div class="flexColumn">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 divLeft  ">
+
+                    <div class="r1 ">
+                        <div class="TextGB">
+                          <p class="fontSizeText500GB"><span class="titleGetStarted">500GB </span>Cold Storage <span class="titleGetStarted">500GB </span>Valut Storage <br><span class="titleGetStarted">2</span>
+                            Users & <span class="titleGetStarted">Unlimted </span>External Drives Yearly</p>
+                        </div>
+                        <div class="card ">
+                            <img class="card-img-top" src="~/Icons/aws_check_icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-text">Aws check icon</h4>
+                                <p class="card-text">Up the card's content bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card ">
+                            <img class="card-img-top" src="~/Icons/backup_tech_icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-text">Backup tech icon</h4>
+                                <p class="card-text">itle ans contentBackup tech icon the card title ans content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="r2 ">
+                        <div class="card ">
+                            <img class="card-img-top" src="~/Icons/secure_icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-text">Secure icon buil</h4>
+                                <p class="card-text">the card the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-top" src="~/Icons/everything_icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-text">Everything icon to make</h4>
+                                <p class="card-text">the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 divRight">
+                    @RenderBody()
+                </div>
+                </div>
+        </div>
+       
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

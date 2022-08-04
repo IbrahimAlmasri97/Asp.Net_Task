@@ -1,0 +1,64 @@
+﻿@model GenieTaskIbrahim.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    .TextGB {
+        display: none;
+    }
+</style>
+<div><h4 class="titleGetStarted">SIGNUP NOW AND GET STARTED</h4><h4>Plesse enter your account information</h4></div>
+<div class="signinNow">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group row">
+                <div class="col-12">
+                    <div class="form-group">
+
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control inputemail", placeholder = "Email" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <div class="form-group">
+
+                        <div class="col-md-12">
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control inputpassword", placeholder = "Password" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-7">
+                    <input type="submit" value="Login" class="btn btn-primary btin" /><br>
+                    <a>@Html.ActionLink("Sign Up", "Signup", "Users", new { @class = "btn btn-primary btnActivate" })</a>
+                </div>
+            </div>
+            <br><span class="text-danger">@ViewBag.errm</span>
+        </div>
+    }
+
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
